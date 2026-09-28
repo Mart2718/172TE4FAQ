@@ -1,0 +1,135 @@
+{
+  "section": "TE4",
+  "title": "Solving Right Triangles",
+  "learningObjective": "Use trigonometric functions and the Pythagorean Theorem to solve right triangles.",
+  "faqs": [
+    {
+      "id": "faq-1",
+      "category": "conceptual",
+      "question": "What does it mean to \"solve\" a right triangle?",
+      "answer": "Solving a right triangle means finding every side length and every angle measure — all six pieces of information, even when you're only handed a couple of them to start. Since the triangle has a 90° angle by definition, and its two acute angles must add to 90° (faq-3), you actually only need a small amount of starting information (any two sides, or one side and one acute angle) to figure out everything else."
+    },
+    {
+      "id": "faq-2",
+      "category": "conceptual",
+      "question": "How do I know which trig ratio (sine, cosine, or tangent) to use for a given problem?",
+      "answer": "Identify which two sides — relative to the angle you care about — are actually involved in the problem (the ones you know, plus the one you're solving for), then match that pair to the right ratio using SOH-CAH-TOA.<div class=\"graph-wrap\"><svg viewBox=\"0 0 300 200\" xmlns=\"http://www.w3.org/2000/svg\"><polygon points=\"40,170 40,40 260,170\" fill=\"none\" stroke=\"#0a3f52\" stroke-width=\"3\"/><rect x=\"40\" y=\"152\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"#0a3f52\" stroke-width=\"2\"/><text x=\"12\" y=\"110\" font-size=\"14\" fill=\"#0a3f52\" font-weight=\"700\">b</text><text x=\"140\" y=\"190\" font-size=\"14\" fill=\"#0a3f52\" font-weight=\"700\">a</text><text x=\"135\" y=\"98\" font-size=\"14\" fill=\"#D4622A\" font-weight=\"700\">c</text><text x=\"18\" y=\"30\" font-size=\"14\" fill=\"#1a6b6b\" font-weight=\"700\">B</text><text x=\"18\" y=\"185\" font-size=\"14\" fill=\"#1a6b6b\" font-weight=\"700\">C</text><text x=\"260\" y=\"185\" font-size=\"14\" fill=\"#1a6b6b\" font-weight=\"700\">A</text></svg></div><p class=\"graph-caption\">Right angle at C. Side a is opposite angle A, side b is opposite angle B, side c (the hypotenuse) is opposite the right angle.</p><div class=\"example-box\"><div class=\"label\">SOH-CAH-TOA (relative to angle A)</div><p class=\"math-line\">\\( \\sin(A) = \\dfrac{\\text{opposite}}{\\text{hypotenuse}} = \\dfrac{a}{c} \\)</p><p class=\"math-line\">\\( \\cos(A) = \\dfrac{\\text{adjacent}}{\\text{hypotenuse}} = \\dfrac{b}{c} \\)</p><p class=\"math-line\">\\( \\tan(A) = \\dfrac{\\text{opposite}}{\\text{adjacent}} = \\dfrac{a}{b} \\)</p></div>"
+    },
+    {
+      "id": "faq-3",
+      "category": "conceptual",
+      "question": "Why do the two acute angles in a right triangle always add up to 90°?",
+      "answer": "Every triangle's three angles add up to 180° total. Since a right triangle already uses up 90° on its right angle, the remaining two angles have no choice but to split the other 90° between them — whatever isn't used by one acute angle belongs entirely to the other."
+    },
+    {
+      "id": "faq-4",
+      "category": "conceptual",
+      "question": "When do I use an inverse trig function versus a regular trig function while solving a triangle?",
+      "answer": "Use a regular trig function (sin, cos, tan) when you already know an angle and are solving for a missing SIDE. Use an inverse trig function (PF3's arcsin, arccos, arctan) when you already know two sides and are solving for a missing ANGLE — since the inverse function is exactly the tool that \"undoes\" the ratio and hands back the angle itself."
+    },
+    {
+      "id": "faq-5",
+      "category": "sticking-points",
+      "question": "How do I find a missing angle when I'm given all three side lengths?",
+      "answer": "Pick any acute angle, write the trig ratio (SOH-CAH-TOA) using the two relevant known sides, then apply the matching inverse trig function to solve for the angle itself.<div class=\"example-box\"><div class=\"label\">Worked Example</div><p class=\"math-line\">Triangle ABC: \\( a=35 \\), \\( b=12 \\), \\( c=37 \\) (hypotenuse). Find angle A.</p><p class=\"math-line\">\\( \\sin(A)=\\dfrac{35}{37} \\)</p><p class=\"math-line\" style=\"margin-top:0.5rem;\">\\( A=\\arcsin\\left(\\dfrac{35}{37}\\right)\\approx 71.1° \\)</p></div>"
+    },
+    {
+      "id": "faq-6",
+      "category": "sticking-points",
+      "question": "How do I find the missing sides when I'm given one angle and the hypotenuse?",
+      "answer": "Use sine to find the side opposite your known angle, and cosine to find the side adjacent to it — both ratios use the hypotenuse directly, so no extra steps are needed.<div class=\"example-box\"><div class=\"label\">Worked Example</div><p class=\"math-line\">Triangle ABC: \\( B=53° \\), \\( c=5 \\) meters (hypotenuse). Find sides a and b.</p><p class=\"math-line\">\\( \\sin(53°)=\\dfrac{b}{5} \\) &rarr; \\( b=5\\sin(53°)\\approx 4 \\) meters</p><p class=\"math-line\" style=\"margin-top:0.5rem;\">\\( \\cos(53°)=\\dfrac{a}{5} \\) &rarr; \\( a=5\\cos(53°)\\approx 3 \\) meters</p></div>"
+    },
+    {
+      "id": "faq-7",
+      "category": "sticking-points",
+      "question": "How do I find the missing sides when I'm given one angle and one leg (not the hypotenuse)?",
+      "answer": "Use tangent to find the other leg directly (since tangent doesn't involve the hypotenuse at all), then use sine or cosine — or the Pythagorean theorem — to find the hypotenuse afterward.<div class=\"example-box\"><div class=\"label\">Worked Example</div><p class=\"math-line\">Triangle ABC: \\( A=28° \\), \\( b=29.3 \\) miles. Find side a and the hypotenuse c.</p><p class=\"math-line\">\\( \\tan(28°)=\\dfrac{a}{29.3} \\) &rarr; \\( a=29.3\\tan(28°)\\approx 15.6 \\) miles</p><p class=\"math-line\" style=\"margin-top:0.5rem;\">\\( \\cos(28°)=\\dfrac{29.3}{c} \\) &rarr; \\( c=\\dfrac{29.3}{\\cos(28°)}\\approx 33.2 \\) miles</p></div>"
+    },
+    {
+      "id": "faq-8",
+      "category": "sticking-points",
+      "question": "How do I decide whether to use a trig ratio or the Pythagorean theorem to find a missing side?",
+      "answer": "Use the Pythagorean theorem only when you already know TWO of the three sides and need the third — it doesn't involve angles at all. Use a trig ratio whenever an angle is part of what you know or need, since the Pythagorean theorem has no way to bring an angle measure into the picture."
+    },
+    {
+      "id": "faq-9",
+      "category": "sticking-points",
+      "question": "How do I find the second acute angle once I already know the first one?",
+      "answer": "Subtract the known acute angle from 90° (faq-3) — no trig ratio needed for this step at all, just simple subtraction.<div class=\"example-box\"><div class=\"label\">Worked Example</div><p class=\"math-line\">If \\( B=53° \\), then \\( A=90°-53°=37° \\).</p></div>"
+    },
+    {
+      "id": "faq-10",
+      "category": "sticking-points",
+      "question": "How do I round to the correct number of decimal places when solving a triangle?",
+      "answer": "Unless a problem specifies otherwise, round side lengths to one decimal place and angle measures to the nearest whole degree — enough precision to be useful without implying more accuracy than the original measurements support. Keep extra decimal places in your calculator throughout the problem, and only round your very last, final answers — rounding too early can cause small errors to snowball through later steps."
+    },
+    {
+      "id": "faq-11",
+      "category": "connections",
+      "question": "How does solving right triangles connect to PF3's inverse trig functions?",
+      "answer": "Every \"find the missing angle\" step in this section is literally PF3's arcsin, arccos, and arctan put to direct use. PF3 taught you those functions somewhat abstractly — evaluate this, find that domain — and this section is the first place you actually need them to solve a real, concrete problem, using a physical triangle instead of just an equation."
+    },
+    {
+      "id": "faq-12",
+      "category": "connections",
+      "question": "How does this connect to TR3's original right-triangle trig definitions?",
+      "answer": "TR3 defined sine, cosine, and tangent as ratios of a right triangle's sides in the first place — opposite over hypotenuse, adjacent over hypotenuse, opposite over adjacent. This section is simply that same definition, now used in the opposite direction: instead of being handed an angle and computing a ratio, you're handed some sides and solving for the angle (or handed an angle and some sides and solving for the rest)."
+    },
+    {
+      "id": "faq-13",
+      "category": "connections",
+      "question": "Why does solving right triangles matter beyond this course?",
+      "answer": "This is one of the most directly practical skills in all of trigonometry — surveying, navigation, construction, and physics all rely constantly on finding an unknown side or angle of a right triangle from partial information. It's also the essential foundation for TE5's Law of Sines and Law of Cosines, which extend this exact same \"solve for everything\" idea to triangles that aren't right triangles at all."
+    }
+  ],
+  "videos": [
+    {
+      "id": "vid-1",
+      "title": "Solve a Right Triangle Given an Angle and the Hypotenuse",
+      "url": "https://www.youtube.com/watch?v=rbokZWrwCJE",
+      "description": "Solving a right triangle given one angle and the hypotenuse, finding both missing sides and the second acute angle.",
+      "category": "solving-triangles",
+      "relatedFaqs": [
+        "faq-6",
+        "faq-9"
+      ]
+    }
+  ],
+  "apps": [],
+  "prompts": {
+    "guided": [
+      {
+        "id": "prompt-1",
+        "title": "Practice Choosing the Right Trig Ratio",
+        "prompt": "I'm learning to solve right triangles. Give me a right triangle with one known angle and one known side, and ask me to identify which two sides are involved (relative to that angle), then pick the correct trig ratio (SOH-CAH-TOA) before solving. Give me a few more practice problems with different combinations of given sides and check my reasoning."
+      },
+      {
+        "id": "prompt-2",
+        "title": "Practice Finding a Missing Angle from Three Sides",
+        "prompt": "I'm learning to find a missing angle when given all three sides of a right triangle. Give me a triangle like this and walk me through setting up the correct trig ratio, then applying the matching inverse trig function to solve for the angle. Give me more practice problems and check my work."
+      },
+      {
+        "id": "prompt-3",
+        "title": "Practice Solving a Full Triangle",
+        "prompt": "I'm learning to solve an entire right triangle — finding every missing side and angle — starting from just one angle and one side. Give me a triangle like this and walk me through the full process: find the missing sides using the right trig ratios, then find the second acute angle. Give me a few more full triangles to solve and check my work at each step."
+      },
+      {
+        "id": "prompt-4",
+        "title": "Practice Deciding Between Trig Ratios and the Pythagorean Theorem",
+        "prompt": "I sometimes get confused about when to use a trig ratio versus the Pythagorean theorem while solving a right triangle. Give me a few different triangle scenarios — some where I'm given two sides, some where I'm given an angle and a side — and ask me to identify which tool I'd use before I actually solve anything. Check my reasoning."
+      },
+      {
+        "id": "prompt-5",
+        "title": "Connect This to PF3 and TR3",
+        "prompt": "I've learned right-triangle trig definitions in TR3 and inverse trig functions in PF3. Now I'm using both together to solve right triangles in TE4. Can you help me see exactly how these two earlier skills combine here — when am I using TR3's original ratios, and when am I using PF3's inverse functions?"
+      }
+    ],
+    "open": [
+      {
+        "id": "open-1",
+        "title": "Create Your Own",
+        "prompt": "Use the AI tool of your choice. Start by describing what you're confused about or curious about from Section TE4 (Solving Right Triangles). Ask the AI to help you explore that idea. Share what you learned and what surprised you."
+      }
+    ]
+  }
+}
